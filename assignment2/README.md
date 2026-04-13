@@ -36,14 +36,8 @@ python run_blending_gradio.py
 ```
 
 ### 2.4 实验结果记录
-> 📋 **此处请填入你的实验截图路径或直接粘贴图片**
+<img width="1263" height="669" alt="Desktop Screenshot 2026 04 13 - 18 14 18 74(1)" src="https://github.com/user-attachments/assets/14f7d007-2715-4608-808c-9b325f0d8249" />
 
-| 场景描述 | 原始背景图像 | 前景选择 (Mask) | 无缝融合结果 |
-| :--- | :--- | :--- | :--- |
-| 示例  | ![bg1](
-![OIP](https://github.com/user-attachments/assets/da6c6937-d4fa-4ca8-85c6-adf720744bc7)
-) | ![mask1](![OIP (1)](https://github.com/user-attachments/assets/254c7c2b-2e84-4aa0-9a5d-85d065f0f03c)) | ![res1](<img width="1263" height="669" alt="Desktop Screenshot 2026 04 13 - 18 14 18 74(1)" src="https://github.com/user-attachments/assets/642bf5ab-2262-43f9-9468-ef2e5dfc1222" />
-) |
 
 
 ---
