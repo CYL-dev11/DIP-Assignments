@@ -29,10 +29,12 @@ pip install pytorch3d
 
 - **优化目标**：
   最小化所有视角下可见点的重投影误差（Reprojection Error）：
+
   
   $$
-  \mathcal{L} = \sum_{i,j} \text{vis}_{i,j} \cdot \| \text{proj}(P_j, K_i, R_i, T_i) - x_{i,j} \|^2
+  \mathcal{L} = \sum_{i,j} vis_{i,j} \cdot \| \text{proj}(P_j, K_i, R_i, T_i) - x_{i,j} \|^2
   $$
+  
 
 ### 运行命令
 ```bash
