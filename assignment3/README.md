@@ -93,13 +93,7 @@ colmap stereo_fusion --workspace_path data/colmap/dense --output_path data/colma
 - **先验信息差异**：Task 1 使用了预设的 20,000 个点坐标作为先验，优化过程仅需对齐坐标；而 Task 2 必须根据像素内容从零计算深度。
 - **鲁棒性过滤**：COLMAP 在稠密融合阶段会剔除光度一致性较低的区域，以保证生成的 3D 模型精度，而这在低对比度的衣服区域会导致点云丢失。
 
-## Pre-trained / Reconstructed Models
 
-你可以通过以下方式查看重建的 3D 模型：
-- **Task 1**: [reconstructed_head.obj](./reconstructed_head.obj) (带顶点的颜色)
-- **Task 2**: [fused.ply](./data/colmap/dense/fused.ply) (高精度点云)
-
-> 📋 建议使用 [Online 3D Viewer](https://3dviewer.net/) 或 MeshLab 查看以上文件。
 
 ## Contributing
 - 框架支持：PyTorch, COLMAP
