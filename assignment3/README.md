@@ -30,7 +30,7 @@ pip install pytorch3d
 - **优化目标**：
   最小化所有视角下可见点的重投影误差（Reprojection Error）：
   
-  $$\mathcal{L} = \sum_{i,j} \text{vis}_{i,j} \cdot \| \text{proj}(P_j, K_i, R_i, T_i) - x_{i,j} \|^2$$
+ Loss = Sum( visibility * (Predicted_2D - Observed_2D)^2 )
 
 ### 运行命令
 ```bash
@@ -63,18 +63,29 @@ colmap stereo_fusion --workspace_path data/colmap/dense --output_path data/colma
 ### 1. Loss 变化曲线 (Task 1)
 > 📋 运行结束后生成的 Loss 曲线截图。
 
-| 初始 Loss | 最终 Loss | 优化时长 | 恢复焦距 $f$ |
-| :--- | :--- | :--- | :--- |
-| ~4.5e5 | < 0.5 | ~5 mins | ~912.4 |
+<img width="640" height="480" alt="Figure_1" src="https://github.com/user-attachments/assets/4f69ed8e-6c4b-4a51-b427-499966590a97" />
+
 
 ### 2. 重建结果对比分析
 
 我们将 Task 1 的参数优化结果与 Task 2 的稠密重建结果进行可视化对比：
 
-| 方案 | 稀疏/稠密结果图 | 结果特点 |
-| :--- | :--- | :--- |
-| **Task 1: PyTorch BA** | ![BA_Result](https://via.placeholder.com/300) | 模型极其完整，覆盖了衣服等所有区域。 |
-| **Task 2: COLMAP** | ![COLMAP_Result](https://via.placeholder.com/300) | 皮肤细节丰富，但黑色衣服区域存在明显空洞。 |
+
+
+**Task 1: PyTorch BA**
+<img width="1593" height="1152" alt="b611dc877c7cbe70c9b12ff1f93920e7" src="https://github.com/user-attachments/assets/19a3d68b-2244-4dac-a038-0a3109825fd4" />
+<img width="1902" height="1185" alt="e1e1ce222284458401d2b2c13cbf2eb1" src="https://github.com/user-attachments/assets/81c39a30-5e5a-463a-a0c0-64e2cf5f4e6c" />
+<img width="1887" height="1185" alt="8d5e090192e50b4e520264ceddcde3a9" src="https://github.com/user-attachments/assets/258e4293-8224-4af5-ad4d-8446568a9e3f" />
+
+
+模型极其完整，覆盖了衣服等所有区域。 
+
+**Task 2: COLMAP** 
+<img width="1917" height="1293" alt="cac3cb65b75c48c1c5a29ae8c3bf524d" src="https://github.com/user-attachments/assets/e1bc6ad7-bd7e-4b18-8c74-abee597de491" />
+<img width="1914" height="1290" alt="226d7f418509b62b952f47e4a7258290" src="https://github.com/user-attachments/assets/b8eb13be-acef-43bf-a673-2c9fa6724c55" />
+<img width="1914" height="1287" alt="500ca5776808e40381465f42684437cf" src="https://github.com/user-attachments/assets/eb58f5cc-7b76-4b0a-9e94-edd5b2945f4e" />
+
+皮肤细节丰富，但黑色衣服区域存在明显空洞。
 
 ### 3. 对比讨论：为什么 COLMAP 结果存在“空洞”？
 实验发现 COLMAP 在处理黑色衣服区域时效果不如 Task 1 完整，原因如下：
@@ -91,6 +102,4 @@ colmap stereo_fusion --workspace_path data/colmap/dense --output_path data/colma
 > 📋 建议使用 [Online 3D Viewer](https://3dviewer.net/) 或 MeshLab 查看以上文件。
 
 ## Contributing
-
-- 算法实现：[你的名字]
 - 框架支持：PyTorch, COLMAP
