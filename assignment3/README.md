@@ -48,8 +48,14 @@ python reconstructed_head.py
 
 ### 运行命令
 ```bash
-# 运行自动化重建脚本
-bash run_colmap.sh
+mkdir data/colmap/sparse -Force
+mkdir data/colmap/dense -Force
+colmap feature_extractor --database_path data/colmap/database.db --image_path data/images --ImageReader.camera_model PINHOLE --ImageReader.single_camera 1
+colmap exhaustive_matcher --database_path data/colmap/database.db
+colmap mapper --database_path data/colmap/database.db --image_path data/images --output_path data/colmap/sparse
+colmap image_undistorter --image_path data/images --input_path data/colmap/sparse/0 --output_path data/colmap/dense
+colmap patch_match_stereo --workspace_path data/colmap/dense
+colmap stereo_fusion --workspace_path data/colmap/dense --output_path data/colmap/dense/fused.ply
 ```
 
 ## Results
