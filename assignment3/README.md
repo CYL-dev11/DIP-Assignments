@@ -31,9 +31,9 @@ pip install pytorch3d
   最小化所有视角下可见点的重投影误差（Reprojection Error）：
 
   
-  $$
-\mathcal{L} = \sum_{i,j} \text{vis}\_{i,j} \cdot \| \text{proj}(P_j, K_i, R_i, T_i) - x\_{i,j} \|^2
-  $$
+  <p align="center">
+  <img src="https://latex.codecogs.com/svg.image?\mathcal{L}=\sum_{i,j}\text{vis}_{i,j}\cdot\|\text{proj}(P_j,K_i,R_i,T_i)-x_{i,j}\|^2" />
+</p>
   
 
 ### 运行命令
