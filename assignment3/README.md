@@ -1,4 +1,4 @@
-# Assignment 1 - 3D Reconstruction: Bundle Adjustment vs. COLMAP
+# Assignment 3 - 3D Reconstruction: Bundle Adjustment vs. COLMAP
 
 作业实现了从多视角 2D 观测恢复 3D 头部模型的两种方案：一是基于 PyTorch 的手动 Bundle Adjustment (BA) 优化实现，二是基于工业级软件 COLMAP 的自动化三维重建流水线。
 
@@ -30,7 +30,9 @@ pip install pytorch3d
 - **优化目标**：
   最小化所有视角下可见点的重投影误差（Reprojection Error）：
   
- Loss = Sum( visibility * (Predicted_2D - Observed_2D)^2 )
+  $$
+  \mathcal{L} = \sum_{i,j} \text{vis}_{i,j} \cdot \| \text{proj}(P_j, K_i, R_i, T_i) - x_{i,j} \|^2
+  $$
 
 ### 运行命令
 ```bash
