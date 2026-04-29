@@ -21,20 +21,21 @@ pip install pytorch3d
 ## Task 1: Implement Bundle Adjustment with PyTorch
 
 ### 实现方案
-1. **参数化**：
-   - 焦距 $f$：全相机共享的单参数优化。
-   - 相机外参：每组视角使用 Euler 角 ($XYZ$ 顺序) 和平移向量 $T$ 进行参数化。
-   - 3D 点云：20,000 个 3D 坐标 $(X, Y, Z)$。
-2. **投影模型**：
-   采用透视投影公式：$u = -f \cdot \frac{X_c}{Z_c} + c_x, \quad v = f \cdot \frac{Y_c}{Z_c} + c_y$。
-3. **优化目标**：
-   最小化可见点（Visibility = 1.0）的重投影误差：
-   $$\mathcal{L} = \sum_{i,j} \text{vis}_{i,j} \cdot \| \text{proj}(P_j, K_i, R_i, T_i) - x_{i,j} \|^2$$
+- **参数化**：焦距 $f$、相机外参 $(R, T)$、3D 点云坐标 $P$。
+- **投影模型**：
+  采用透视投影公式，将相机坐标系下的点 $[X_c, Y_c, Z_c]$ 投影至像素坐标 $[u, v]$：
+  
+  $$u = -f \cdot \frac{X_c}{Z_c} + c_x, \quad v = f \cdot \frac{Y_c}{Z_c} + c_y$$
+
+- **优化目标**：
+  最小化所有视角下可见点的重投影误差（Reprojection Error）：
+  
+  $$\mathcal{L} = \sum_{i,j} \text{vis}_{i,j} \cdot \| \text{proj}(P_j, K_i, R_i, T_i) - x_{i,j} \|^2$$
 
 ### 运行命令
 ```bash
 # 运行 PyTorch 优化脚本
-python task1_ba.py
+python reconstructed_head.py
 ```
 
 ## Task 2: 3D Reconstruction with COLMAP
