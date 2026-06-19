@@ -71,6 +71,17 @@ python train.py
 > <img width="483" height="600" alt="QQ_1776080446775" src="https://github.com/user-attachments/assets/0f34d05c-c5ef-486d-acf6-42b435bb138d" />
 
 
+#### 3.4.2 补充实验结果文件位置
+
+本次补充上传了 Pix2Pix 训练与验证过程中保存的结果文件，均位于 `assignment2/Pix2Pix/` 目录下：
+
+- **训练结果**: `assignment2/Pix2Pix/train_results/`
+- **验证结果**: `assignment2/Pix2Pix/val_results/`
+- **模型权重**: `assignment2/Pix2Pix/checkpoints/`
+- **实验数据集**: `assignment2/Pix2Pix/facades/`
+
+其中 `train_results` 和 `val_results` 中保存了不同 epoch 阶段生成图像与真实图像的对比结果，可用于观察模型训练过程中图像翻译效果的变化；`checkpoints` 中保存了训练过程中的模型参数文件，可用于后续继续训练或加载模型进行测试。
+
 
 
 ---
