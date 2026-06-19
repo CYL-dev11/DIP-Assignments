@@ -2,7 +2,7 @@
 
 作业来源：[DIP-Teaching Assignments/01_ImageWarping](https://github.com/YudongGuo/DIP-Teaching/blob/main/Assignments/01_ImageWarping/README.md)
 
-学生编号：SA25001037
+学号：SA25001037
 
 ## 1. 实验目的
 
