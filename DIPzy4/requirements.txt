@@ -1,0 +1,6 @@
+torch
+numpy
+opencv-python
+tqdm
+natsort
+# Optional: pytorch3d. The submitted code includes pure PyTorch fallbacks.

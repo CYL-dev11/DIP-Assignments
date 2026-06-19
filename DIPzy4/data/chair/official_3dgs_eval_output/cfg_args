@@ -1,0 +1,1 @@
+Namespace(sh_degree=3, source_path='C:\\Users\\ASUS\\Desktop\\DIPzy4\\data\\chair', model_path='C:\\Users\\ASUS\\Desktop\\DIPzy4\\data\\chair\\official_3dgs_eval_output', images='images', depths='', resolution=-1, white_background=False, train_test_exp=False, data_device='cuda', eval=True)
