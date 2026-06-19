@@ -1,4 +1,4 @@
-DIPzy4/**/*.pth filter=lfs diff=lfs merge=lfs -text
-DIPzy4/**/*.ply filter=lfs diff=lfs merge=lfs -text
-DIPzy4/**/*.db filter=lfs diff=lfs merge=lfs -text
-DIPzy4/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
+assignment4/**/*.pth filter=lfs diff=lfs merge=lfs -text
+assignment4/**/*.ply filter=lfs diff=lfs merge=lfs -text
+assignment4/**/*.db filter=lfs diff=lfs merge=lfs -text
+assignment4/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
